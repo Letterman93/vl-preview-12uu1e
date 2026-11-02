@@ -699,7 +699,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <p style="margin: 0; font-size: 18px; color: #B4C0D3">Tell us about your project. We respond within one business day.</p>
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #8FA0BA">contact@visulogic.net</p>
 </div>
-<form id="contact-form" novalidate style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #0D1628; border-radius: 18px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<form id="contact-form" style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #0D1628; border-radius: 18px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 16px">
 <label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name<input type="text" name="name" autocomplete="name" required style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
 <label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email<input type="email" name="email" autocomplete="email" required style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
@@ -709,7 +709,6 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Timeline
 <select name="timeline" style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400; background: #FFFFFF"><option>Exploring options</option><option>Within 3 months</option><option>Within 6 months</option><option>Later this year</option></select></label>
 <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A5668">By sending this form, you agree that Visulogic may use the details you provide to reply to you. We do not add you to a mailing list. See our <a href="privacy.html" style="color: #2E4FB8">Privacy Policy</a>.</p>
-<p class="vl-formnote" id="form-note" role="status"></p>
 <button type="submit" style="min-height: 50px; border: 0; border-radius: 10px; background: #3D63DD; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Send</button>
 </form>
 </div>
@@ -746,18 +745,6 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
     });
   },{rootMargin:'100px 0px'});
   document.querySelectorAll('svg.vl-map-h, svg.vl-map-v').forEach(function(svg){io.observe(svg.parentElement);});
-})();
-</script>
-<script>
-(function(){
-  var f=document.getElementById('contact-form'),n=document.getElementById('form-note');
-  if(!f||!n)return;
-  f.addEventListener('submit',function(e){
-    e.preventDefault();
-    if(!f.checkValidity()){f.reportValidity();return;}
-    n.textContent='The contact form is not connected yet, so nothing was sent or saved. Please email contact@visulogic.net for now.';
-    n.classList.add('on');
-  });
 })();
 </script>
 </body>
