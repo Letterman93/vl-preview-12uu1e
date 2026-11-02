@@ -42,6 +42,8 @@ details summary::-webkit-details-marker{display:none}
 a,button,summary{transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,transform .2s ease}
 header nav a:not([style*="background"]),footer nav a{background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;padding-bottom:3px;transition:color .2s ease,background-size .25s ease}
 header nav a:not([style*="background"]):hover,footer nav a:hover{color:#FFFFFF!important;background-size:100% 1.5px}
+footer a[aria-label]:hover{color:#FFFFFF!important}
+figcaption a:hover{color:#2E4FB8!important;text-decoration:underline!important}
 a[style*="background: #3D63DD"]:hover,button[type="submit"]:hover{background:#4A72F0!important;transform:translateY(-1px);box-shadow:0 10px 24px rgba(61,99,221,.35)}
 a[style*="background: #3D63DD"]:active,button[type="submit"]:active{transform:none;box-shadow:none}
 a[href="#services"][style*="border: 1px solid"]:hover{border-color:#7C97EE!important;background:rgba(124,151,238,.10);color:#FFFFFF!important}
@@ -536,7 +538,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <div style="max-width: 1200px; margin: 0 auto; padding: 104px 24px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center">
 <figure style="flex: 0 1 380px; min-width: 0; margin: 0; display: flex; flex-direction: column; gap: 12px">
 <img src="assets/zak-portrait-v2.jpg" alt="Zak Nizam, founder of Visulogic" style="display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 18px; box-shadow: 0 20px 44px rgba(13, 22, 40, 0.16)">
-<figcaption style="font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6779"><strong style="color: #0D1628; font-weight: 500">Zak Nizam</strong> · Founder and lead engineer</figcaption>
+<figcaption style="display: flex; flex-direction: column; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #5B6779"><strong style="color: #0D1628; font-weight: 500">Zak Nizam</strong><span style="margin-top: -4px">Founder &amp; Software Systems Engineer</span><a href="https://www.linkedin.com/in/zaknizam/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; color: #3D63DD; text-decoration: none; font-weight: 500"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="none" stroke="#3D63DD" stroke-width="1.8"></rect><rect x="6.2" y="10" width="2.6" height="7.5" fill="#3D63DD"></rect><circle cx="7.5" cy="7" r="1.6" fill="#3D63DD"></circle><path d="M11.2 10H13.6V11.2C14.1 10.4 15 9.8 16.2 9.8C18 9.8 18.9 11 18.9 13V17.5H16.3V13.6C16.3 12.6 15.9 12 15 12C14.1 12 13.7 12.7 13.7 13.6V17.5H11.2Z" fill="#3D63DD"></path></svg>Connect on LinkedIn</a></figcaption>
 </figure>
 <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #3D63DD">About</p>
@@ -598,7 +600,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <a href="#about" style="color: #A9B6CA; text-decoration: none">About</a>
 <a href="#contact" style="color: #A9B6CA; text-decoration: none">Contact</a>
 </nav>
-<span>© Visulogic · visulogic.net</span>
+<span style="display: flex; align-items: center; gap: 18px"><a href="https://www.linkedin.com/in/zaknizam/" target="_blank" rel="noopener" aria-label="Zak Nizam on LinkedIn" style="display: inline-flex; color: #A9B6CA"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"></rect><rect x="6.2" y="10" width="2.6" height="7.5" fill="currentColor"></rect><circle cx="7.5" cy="7" r="1.6" fill="currentColor"></circle><path d="M11.2 10H13.6V11.2C14.1 10.4 15 9.8 16.2 9.8C18 9.8 18.9 11 18.9 13V17.5H16.3V13.6C16.3 12.6 15.9 12 15 12C14.1 12 13.7 12.7 13.7 13.6V17.5H11.2Z" fill="currentColor"></path></svg></a><span>© Visulogic · visulogic.net</span></span>
 </div>
 </footer>
 
