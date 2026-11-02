@@ -8,8 +8,15 @@
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+@font-face{font-family:'Red Hat Display';src:url('assets/fonts/RedHatDisplay-var.woff') format('woff');font-weight:300 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Inter';src:url('assets/fonts/Inter-var.woff') format('woff');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url('assets/fonts/JetBrainsMono-var.woff') format('woff');font-weight:100 800;font-style:normal;font-display:swap}
+.vl-skip{position:absolute;left:16px;top:-60px;z-index:100;background:#FFFFFF;color:#0D1628;padding:12px 18px;border-radius:10px;font-weight:600;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.vl-skip:focus{top:16px}
+.vl-formnote{display:none;margin:0;padding:12px 14px;border-radius:10px;background:#EAF0FB;color:#1E3A8A;font-size:15px}
+.vl-formnote.on{display:block}
+</style>
 <style>
 body{margin:0;background:#0D1628}
 a{color:#3D63DD}a:hover{color:#2E4FB8}
@@ -51,6 +58,7 @@ header a[href="#top"]:hover{opacity:.85}
 details{transition:border-color .2s ease,box-shadow .2s ease}
 details:hover{border-color:#B9C6E6!important}
 details summary:hover{color:#2E4FB8}
+a:focus-visible,section:focus{outline:none}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #7C97EE;outline-offset:3px}
 input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 @keyframes vl-f3{0%{opacity:0}5%,33%{opacity:1}38%,100%{opacity:0}}
@@ -75,6 +83,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 
 </head>
 <body>
+<a class="vl-skip" href="#top">Skip to main content</a>
 
 
 <div style="background: #FFFFFF; color: #0D1628; font-family: Inter, system-ui, sans-serif; font-size: 17px; line-height: 1.6">
@@ -97,7 +106,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 </div>
 </header>
 
-<section id="top" style="position: relative; overflow: hidden">
+<section id="top" tabindex="-1" style="position: relative; overflow: hidden">
 <svg aria-hidden="true" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.35">
 <g stroke="#1C2840" stroke-width="1">
 <path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200"></path>
@@ -662,7 +671,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <p style="margin: 0; font-size: 18px; color: #3B4759">Visulogic applies the same standards to businesses of every size. Clients work directly with the engineer building their system, and projects are planned and measured using Lean process-improvement methods.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px">
 <span style="font-size: 14px; padding: 6px 12px; border-radius: 99px; background: #E9EEFB; color: #2E4FB8">Veteran-owned</span>
-<span style="font-size: 14px; padding: 6px 12px; border-radius: 99px; background: #E6F1E4; color: #3E7A4B">Florida-based</span>
+<span style="font-size: 14px; padding: 6px 12px; border-radius: 99px; background: #E6F1E4; color: #2C6338">Florida-based</span>
 <span style="font-size: 14px; padding: 6px 12px; border-radius: 99px; background: #F0F2F6; color: #3B4759">Remote-first</span>
 </div>
 </div>
@@ -690,15 +699,17 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <p style="margin: 0; font-size: 18px; color: #B4C0D3">Tell us about your project. We respond within one business day.</p>
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #8FA0BA">contact@visulogic.net</p>
 </div>
-<form style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #0D1628; border-radius: 18px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
+<form id="contact-form" novalidate style="flex: 1 1 420px; min-width: 0; background: #FFFFFF; color: #0D1628; border-radius: 18px; padding: 30px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; flex-wrap: wrap; gap: 16px">
-<label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name<input type="text" name="name" autocomplete="name" style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
-<label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email<input type="email" name="email" autocomplete="email" style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
+<label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name<input type="text" name="name" autocomplete="name" required style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
+<label style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email<input type="email" name="email" autocomplete="email" required style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
 </div>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Company (optional)<input type="text" name="company" autocomplete="organization" style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400"></label>
-<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">What do you need?<textarea name="message" rows="4" style="padding: 10px 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400; resize: vertical"></textarea></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">What do you need?<textarea name="message" rows="4" required style="padding: 10px 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400; resize: vertical"></textarea></label>
 <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Timeline
 <select name="timeline" style="min-height: 44px; padding: 0 12px; border: 1px solid #C8D2E0; border-radius: 8px; font: inherit; font-weight: 400; background: #FFFFFF"><option>Exploring options</option><option>Within 3 months</option><option>Within 6 months</option><option>Later this year</option></select></label>
+<p style="margin: 0; font-size: 13px; line-height: 1.5; color: #4A5668">By sending this form, you agree that Visulogic may use the details you provide to reply to you. We do not add you to a mailing list. See our <a href="privacy.html" style="color: #2E4FB8">Privacy Policy</a>.</p>
+<p class="vl-formnote" id="form-note" role="status"></p>
 <button type="submit" style="min-height: 50px; border: 0; border-radius: 10px; background: #3D63DD; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Send</button>
 </form>
 </div>
@@ -713,6 +724,7 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
 <a href="#approach" style="color: #A9B6CA; text-decoration: none">Approach</a>
 <a href="#about" style="color: #A9B6CA; text-decoration: none">About</a>
 <a href="#contact" style="color: #A9B6CA; text-decoration: none">Contact</a>
+<a href="privacy.html" style="color: #A9B6CA; text-decoration: none">Privacy</a>
 </nav>
 <span style="display: flex; align-items: center; gap: 18px"><a href="https://www.linkedin.com/in/zaknizam/" target="_blank" rel="noopener" aria-label="Zak Nizam on LinkedIn" style="display: inline-flex; color: #A9B6CA"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><rect x="1.5" y="1.5" width="21" height="21" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"></rect><rect x="6.2" y="10" width="2.6" height="7.5" fill="currentColor"></rect><circle cx="7.5" cy="7" r="1.6" fill="currentColor"></circle><path d="M11.2 10H13.6V11.2C14.1 10.4 15 9.8 16.2 9.8C18 9.8 18.9 11 18.9 13V17.5H16.3V13.6C16.3 12.6 15.9 12 15 12C14.1 12 13.7 12.7 13.7 13.6V17.5H11.2Z" fill="currentColor"></path></svg></a><span>© Visulogic · visulogic.net</span></span>
 </div>
@@ -734,6 +746,18 @@ input:hover,textarea:hover,select:hover{border-color:#8FA0BA!important}
     });
   },{rootMargin:'100px 0px'});
   document.querySelectorAll('svg.vl-map-h, svg.vl-map-v').forEach(function(svg){io.observe(svg.parentElement);});
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('contact-form'),n=document.getElementById('form-note');
+  if(!f||!n)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    n.textContent='The contact form is not connected yet, so nothing was sent or saved. Please email contact@visulogic.net for now.';
+    n.classList.add('on');
+  });
 })();
 </script>
 </body>
